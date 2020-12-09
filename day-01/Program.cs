@@ -13,10 +13,13 @@ namespace day_01
       {
         for (var j=0;j<lines.Length;j++)
         {
-          if (lines[i] + lines[j] == 2020)
+          for (var k = 0; k < lines.Length; k++)
           {
-            Console.WriteLine($"{i} {j} {lines[i] * lines[j]}");
-            break;
+            if (lines[i] + lines[j] + lines[k] == 2020)
+            {
+              Console.WriteLine($"{i} {j} {k} {lines[i] * lines[j] * lines[k]}");
+              break;
+            }
           }
         }
       }
