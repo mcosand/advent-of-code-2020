@@ -11,9 +11,10 @@ namespace day_02
 
       int count = lines.Select(f =>
       {
-        int c = f[2].Where(g => g == f[1][0]).Count();
+        string code = f[2];
+        char c = f[1][0];
         int[] range = f[0].Split('-').Select(g => int.Parse(g)).ToArray();
-        return c >= range[0] && c <= range[1] ? 1 : 0;
+        return code[range[0] - 1] == c ^ code[range[1] - 1] == c ? 1 : 0;
       }).Sum();
 
       Console.WriteLine(count);
